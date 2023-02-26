@@ -13,13 +13,13 @@
 
 **1. MinGW**
 
-可以直接下载 MinGW，``x86_64-posix-sjlj`	 [下载地址](https://sourceforge.net/projects/mingw-w64/files/)
+可以直接下载 MinGW，`x86_64-posix-sjlj`	 [下载地址](https://sourceforge.net/projects/mingw-w64/files/)
 
 也可以通过下载带编译器的 CodeBlocks 来安装 MinGW，	[下载地址](https://www.fosshub.com/Code-Blocks.html?dwl=codeblocks-20.03.tar.xz)
 
 安装完成后，将 g++/gcc.exe 所在的目录添加到**环境变量**中，在 cmd 中运行 `gcc -v`，显示版本信息则成功
 
-![image-20230224222433218](.\picture\image-20230224222433218.png)
+<img src=".\picture\image-20230224222433218.png" alt="image-20230224222433218" style="zoom:100%;" />
 
 **2. Cmake**
 
@@ -27,7 +27,7 @@
 
 安装时记得勾选添加环境变量选项，同样可以在 cmd 中运行 `cmake --version`，查看是否配置成功
 
-![image-20230225202319422](.\picture\image-20230225202319422.png)
+<img src=".\picture\image-20230225202319422.png" alt="image-20230225202319422" style="zoom:100%;" />
 
 CMake 是用于生成 Makefile 的，生成规则写在 CMakeLists.txt 文件中，通过 cmake 命令生成 Makefile，再通过 Makefile 编译项目
 
@@ -149,7 +149,7 @@ gcc main.c ./calculate/add.c -I ./calculate/include -o calculate.exe
 
 结构如下
 
-![image-20230225212839304](.\picture\image-20230225212839304.png)
+<img src=".\picture\image-20230225212839304.png" alt="image-20230225212839304" style="zoom:100%;" />
 
 可以看到，程序顺利执行
 
@@ -169,7 +169,7 @@ mingw32-make
 
 结果如下
 
-![image-20230225213907383](.\picture\image-20230225213907383.png)
+<img src=".\picture\image-20230225213907383.png" alt="image-20230225213907383" style="zoom:100%;" />
 
 同样成功执行
 
@@ -191,7 +191,7 @@ mingw32-make
 
 会在 build/lib 目录下生成四个库文件 `libgtest.a`、`libgtest_main.a`、`libgmock.a`、`libgmock_main.a`，将 lib 文件夹复制到 googletest 文件夹下，后续链接库文件时需要用到
 
-![image-20230226091942497](.\picture\image-20230226091942497.png)
+<img src=".\picture\image-20230226091942497.png" alt="image-20230226091942497" style="zoom:100%;" />
 
 #### 2. 测试代码
 
@@ -292,7 +292,7 @@ g++ calculate_test.cpp ../../../src/calculate/add.c ../../googletest/lib/libgtes
 
 如果出现未定义错误，需要将测试代码中 `extern {` 以及 `}` 这两行注释掉，只保留 `#include "add.h"` ，原因能是 cpp 和 c 混合编译导致的，具体原因大家可以去查一查，哈哈😊，具体结果如下
 
-![image-20230226100601679](.\picture\image-20230226100601679.png)
+<img src=".\picture\image-20230226100601679.png" alt="image-20230226100601679" style="zoom:100%;" />
 
 - **cmake**
 
@@ -307,7 +307,7 @@ mingw32-make
 
 如果出现未定义错误，需要将测试代码中 `extern {` 以及 `}` 这两行注释打开
 
-![image-20230226101657305](.\picture\image-20230226101657305.png)
+<img src=".\picture\image-20230226101657305.png" alt="image-20230226101657305" style="zoom:100%;" />
 
 可以看到，成功执行
 
